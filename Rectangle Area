@@ -1,0 +1,39 @@
+
+/*
+ * Create classes Rectangle and RectangleArea
+ */
+ class Rectangle
+ {
+     protected:
+        int width;
+        int height;
+     
+     public:
+        Rectangle() : width(0), height(0) {}
+        Rectangle(const int w, const int h) : width(w), height(h) {}
+        
+        virtual void display() const
+        {
+            cout << width << " " << height << endl;
+        }
+ };
+ 
+ class RectangleArea : public Rectangle
+ {
+     public:
+        RectangleArea() : Rectangle() {}
+        RectangleArea(const int w, const int h) : Rectangle(w, h) {}
+                
+        void read_input()
+        {
+            char ch;
+            cin >> width >> height;
+        }
+        
+        virtual void display() const
+        {
+            cout << width * height << endl;
+        }
+        
+ };
+
